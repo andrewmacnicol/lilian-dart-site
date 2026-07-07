@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Lilian Dart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .sidebar-photo {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 4px 32px 4px 32px;
+      overflow: hidden;
+      background: var(--sand);
+      margin-bottom: 1.5rem;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--ink-muted);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .contact-block {
+      background: var(--sand);
+      border-radius: 8px;
+      padding: 1.25rem;
+      border: 1px solid var(--dust);
+    }
+
+    .contact-block h3 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-mist);
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-item:last-child { margin-bottom: 0; }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-value {
+      font-size: 0.875rem;
+      color: var(--ink-light);
+    }
+
+    .contact-value a {
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border: 1px solid var(--dust);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      background: var(--white);
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      color: var(--green-deep);
+      border-color: var(--green-mist);
+    }
+
+    .fields-of-study {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 800px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .sidebar-photo {
+        position: static;
+        max-width: 320px;
+      }
+      .sidebar-photo .photo-frame {
+        aspect-ratio: 1 / 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Lilian Dart</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="research.html" data-page="research">Research</a></li>
+      <li><a href="teaching.html" data-page="teaching">Teaching</a></li>
+      <li><a href="cv.html" data-page="cv">CV</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="about.html" data-page="about">About</a>
+    <a href="research.html" data-page="research">Research</a>
+    <a href="teaching.html" data-page="teaching">Teaching</a>
+    <a href="cv.html" data-page="cv">CV</a>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="page-hero-label">About</p>
+        <h1>Researcher, instructor,<br>and geographer</h1>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="about-grid">
+
+        <div class="about-main">
+          <p class="section-label">Biography</p>
+          <p>
+            I am a geographer researching how human-environment relationships shape behaviour, participation, and environmental decision-making in Canada. My doctoral work examines how rural landowners navigate tensions between capital and place in their stewardship decisions, and how collaborative governance arrangements can support more just and sustainable outcomes.
+          </p>
+          <p>
+            With a strong academic foundation spanning both the sciences and social sciences, my previous work has explored community-based conservation, community health, and housing policy. This breadth of experience enables me to approach research through multiple lenses, drawing from a range of fields and methodologies.
+          </p>
+          <p>
+            Alongside my doctoral work, I contribute to projects on faith-based environmentalism, commons and commoning, biodiversity policy, and housing and homelessness policy.
+          </p>
+
+          <div style="margin-top: 2.5rem;">
+            <p class="section-label">Fields of study</p>
+            <div class="fields-of-study">
+              <span class="tag blue">Environment & Climate</span>
+              <span class="tag blue">Rural geography</span>
+              <span class="tag blue">Social & Political Geography</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem;">
+            <p class="section-label">Areas of interest</p>
+            <p>Conservation · Climate change · Working landscapes · Social networks · Place · Environmental communication · Collaborative governance · Rural geography · Canada</p>
+          </div>
+
+          <div style="margin-top: 2.5rem;">
+            <p class="section-label">Education</p>
+            <div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div>
+                  <p class="edu-degree">PhD, Human Geography <span style="color:var(--ink-muted); font-weight:400;">(current)</span></p>
+                  <p class="edu-school">University of Toronto · Supervisor: Andrea Olive · Cohort 2023–2024</p>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div>
+                  <p class="edu-degree">MA, Sustainability Studies</p>
+                  <p class="edu-school">Trent University</p>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div>
+                  <p class="edu-degree">BSc, Biology <span style="color:var(--ink-muted); font-weight:400;">(minor: Geography)</span></p>
+                  <p class="edu-school">Mount Allison University</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar-photo">
+          <div class="photo-frame">
+            <img src="ld.jpg" alt="Lilian Dart" />
+          </div>
+
+          <div class="contact-block">
+            <h3>Contact</h3>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">
+                <a href="mailto:lilian.dart@mail.utoronto.ca">lilian.dart@mail.utoronto.ca</a>
+              </span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Office</span>
+              <span class="contact-value">Sidney Smith Hall, Room 6026C<br>University of Toronto, St. George</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Pronouns</span>
+              <span class="contact-value">she/her</span>
+            </div>
+            <div class="social-links">
+              <a href="https://ca.linkedin.com/in/lilian-dart" target="_blank" class="social-link">LinkedIn</a>
+              <a href="https://x.com/liliandart" target="_blank" class="social-link">X</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Lilian Dart</span>
+      <div class="footer-links">
+        <a href="mailto:lilian.dart@mail.utoronto.ca">Email</a>
+        <a href="https://ca.linkedin.com/in/lilian-dart" target="_blank">LinkedIn</a>
+        <a href="https://x.com/liliandart" target="_blank">X</a>
+      </div>
+      <p class="footer-copy">PhD Candidate, Department of Human Geography · University of Toronto</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>initNav('about');</script>
+</body>
+</html>

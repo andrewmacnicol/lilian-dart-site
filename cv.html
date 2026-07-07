@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Lilian Dart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cv-download-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      background: var(--sand);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--dust);
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-download-text h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cv-download-text p {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      margin: 0;
+    }
+
+    .cv-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .cv-section-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-mist);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--sand-dark);
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 1.5rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--sand-dark);
+    }
+
+    .cv-entry:first-of-type { border-top: 1px solid var(--sand-dark); }
+
+    .cv-year {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      padding-top: 0.1rem;
+      line-height: 1.4;
+    }
+
+    .cv-content h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .cv-content p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin: 0;
+    }
+
+    .cv-content .cv-detail {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    .note-box {
+      background: #EEF4F9;
+      border-radius: 6px;
+      padding: 1.1rem 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .note-box p {
+      font-size: 0.875rem;
+      color: var(--green-dark);
+      margin: 0;
+    }
+
+    .note-box a { color: var(--green-deep); }
+
+    @media (max-width: 560px) {
+      .cv-entry {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+      .cv-year {
+        font-size: 0.75rem;
+        color: var(--green-mist);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Lilian Dart</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="research.html" data-page="research">Research</a></li>
+      <li><a href="teaching.html" data-page="teaching">Teaching</a></li>
+      <li><a href="cv.html" data-page="cv">CV</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="about.html" data-page="about">About</a>
+    <a href="research.html" data-page="research">Research</a>
+    <a href="teaching.html" data-page="teaching">Teaching</a>
+    <a href="cv.html" data-page="cv">CV</a>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="page-hero-label">CV</p>
+        <h1>Curriculum Vitae</h1>
+      </div>
+    </div>
+
+    <div class="content-section">
+
+      <!-- DOWNLOAD BLOCK -->
+      <div class="cv-download-block">
+        <div class="cv-download-text">
+          <h2>Download full CV</h2>
+          <p>PDF · Last updated [add date here]</p>
+        </div>
+        <!--
+          To link to your CV PDF:
+          1. Save your CV as a PDF named "lilian-dart-cv.pdf"
+          2. Put it in the same folder as this HTML file
+          3. The button below will automatically link to it
+          Or update the href to wherever you host your PDF.
+        -->
+        <a href="lilian-dart-cv.pdf" class="btn btn-primary" download>
+          Download CV (PDF)
+        </a>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="cv-section">
+        <p class="cv-section-title">Education</p>
+
+        <div class="cv-entry">
+          <span class="cv-year">2023–present</span>
+          <div class="cv-content">
+            <h3>PhD, Human Geography</h3>
+            <p>University of Toronto</p>
+            <p class="cv-detail">Supervisor: Andrea Olive</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Add year</span>
+          <div class="cv-content">
+            <h3>MA, Sustainability Studies</h3>
+            <p>Trent University</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Add year</span>
+          <div class="cv-content">
+            <h3>BSc, Biology</h3>
+            <p>Mount Allison University</p>
+            <p class="cv-detail">Minor: Geography</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="cv-section">
+        <p class="cv-section-title">Publications</p>
+
+        <div class="cv-entry">
+          <span class="cv-year">2025</span>
+          <div class="cv-content">
+            <h3>The Power of Care for Climate Justice</h3>
+            <p>Mudliar, P., Dart, L., Eyelli Philipp Gutierrez, D., Mankairos, C.</p>
+            <p class="cv-detail">The Nature of Cities</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div class="cv-content">
+            <h3>Cross-Sectoral Roadmap for Change: Addressing Homelessness in Peterborough/Nogojiwanong</h3>
+            <p>Dart, L., Martin, M. A., Nichols, N.</p>
+            <p class="cv-detail">Research for Social Change Lab</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2023</span>
+          <div class="cv-content">
+            <h3>From Onus to Action in the Housing and Homelessness Crisis</h3>
+            <p>Dart, L.</p>
+            <p class="cv-detail">Peterborough Drug Strategy</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEACHING -->
+      <div class="cv-section">
+        <p class="cv-section-title">Teaching</p>
+
+        <!--
+          ============================================================
+          Add your teaching history here — copy the cv-entry block.
+          ============================================================
+        -->
+
+        <div class="cv-entry">
+          <span class="cv-year">Add year</span>
+          <div class="cv-content">
+            <h3>Course title here</h3>
+            <p>Sessional Instructor · University of Toronto</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Add year</span>
+          <div class="cv-content">
+            <h3>Course title here</h3>
+            <p>Teaching Assistant · University of Toronto</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIELDS OF STUDY -->
+      <div class="cv-section">
+        <p class="cv-section-title">Fields of study</p>
+
+        <div class="cv-entry">
+          <span class="cv-year">Primary</span>
+          <div class="cv-content">
+            <h3>Environment & Climate · Rural · Social & Political Geography</h3>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Areas</span>
+          <div class="cv-content">
+            <p style="font-size:0.9rem; color:var(--ink-light);">Conservation, climate change, working landscapes, social networks, place, environmental communication, collaborative governance, rural geography, Canada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="cv-section">
+        <p class="cv-section-title">Contact</p>
+
+        <div class="cv-entry">
+          <span class="cv-year">Email</span>
+          <div class="cv-content">
+            <a href="mailto:lilian.dart@mail.utoronto.ca" style="color:var(--green-deep); font-size:0.9rem;">lilian.dart@mail.utoronto.ca</a>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Office</span>
+          <div class="cv-content">
+            <p>Sidney Smith Hall, Room 6026C</p>
+            <p>University of Toronto, St. George Campus</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">Online</span>
+          <div class="cv-content">
+            <p><a href="https://ca.linkedin.com/in/lilian-dart" target="_blank" style="color:var(--green-deep);">LinkedIn</a> · <a href="https://x.com/liliandart" target="_blank" style="color:var(--green-deep);">X / Twitter</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <p>For the most complete and current version of my CV, please download the PDF above or <a href="mailto:lilian.dart@mail.utoronto.ca">contact me directly</a>.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Lilian Dart</span>
+      <div class="footer-links">
+        <a href="mailto:lilian.dart@mail.utoronto.ca">Email</a>
+        <a href="https://ca.linkedin.com/in/lilian-dart" target="_blank">LinkedIn</a>
+        <a href="https://x.com/liliandart" target="_blank">X</a>
+      </div>
+      <p class="footer-copy">PhD Candidate, Department of Human Geography · University of Toronto</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>initNav('cv');</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilian Dart — Geographer & Researcher</title>
+  <meta name="description" content="Lilian Dart is a PhD candidate in Human Geography at the University of Toronto, researching human-environment relationships, rural stewardship, and collaborative governance in Canada." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+      min-height: calc(100svh - var(--nav-height));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-text { max-width: 520px; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-name {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--green-deep);
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-frame {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3 / 4;
+      border-radius: 4px 40px 4px 40px;
+      overflow: hidden;
+      background: var(--sand);
+      position: relative;
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .hero-image-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+
+    .hero-image-placeholder span {
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0 1rem;
+      line-height: 1.5;
+    }
+
+    .hero-accent {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--sand-dark);
+      z-index: -1;
+    }
+
+    /* INTEREST TAGS */
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* QUICK LINKS */
+    .quick-links {
+      background: var(--sand);
+      border-top: 1px solid var(--dust);
+    }
+
+    .quick-links-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem clamp(1.5rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .quick-card {
+      background: var(--white);
+      border: 1px solid var(--dust);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      display: block;
+    }
+
+    .quick-card:hover {
+      border-color: var(--green-mist);
+      transform: translateY(-2px);
+    }
+
+    .quick-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--green-mist);
+    }
+
+    .quick-card h3 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .quick-card p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        min-height: unset;
+        padding-top: 3rem;
+      }
+      .hero-image-wrap { order: -1; }
+      .hero-image-frame { max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Lilian Dart</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="research.html" data-page="research">Research</a></li>
+      <li><a href="teaching.html" data-page="teaching">Teaching</a></li>
+      <li><a href="cv.html" data-page="cv">CV</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="about.html" data-page="about">About</a>
+    <a href="research.html" data-page="research">Research</a>
+    <a href="teaching.html" data-page="teaching">Teaching</a>
+    <a href="cv.html" data-page="cv">CV</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">PhD Candidate · University of Toronto</p>
+        <h1 class="hero-name">Lilian<br><em>Dart</em></h1>
+        <p class="hero-bio">
+          Geographer researching how human-environment relationships shape behaviour, participation, and environmental decision-making in Canada. Particularly interested in rural stewardship, collaborative governance, and the tensions between capital and place.
+        </p>
+        <div class="hero-ctas">
+          <a href="research.html" class="btn btn-primary">View my research</a>
+          <a href="about.html" class="btn btn-outline">About me</a>
+        </div>
+        <div class="interest-tags">
+          <span class="tag blue">Conservation</span>
+          <span class="tag blue">Rural geography</span>
+          <span class="tag blue">Climate change</span>
+          <span class="tag">Governance</span>
+          <span class="tag">Place</span>
+          <span class="tag">Canada</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <img src="ld.jpg" alt="Lilian Dart" />
+        </div>
+        <div class="hero-accent"></div>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <div class="quick-links-inner">
+        <a href="research.html" class="quick-card">
+          <div class="quick-card-icon">&#9632;</div>
+          <h3>Research & publications</h3>
+          <p>Doctoral work, collaborative projects, and peer-reviewed publications</p>
+        </a>
+        <a href="teaching.html" class="quick-card">
+          <div class="quick-card-icon">&#9632;</div>
+          <h3>Teaching</h3>
+          <p>Courses taught and areas of instruction at the University of Toronto</p>
+        </a>
+        <a href="cv.html" class="quick-card">
+          <div class="quick-card-icon">&#9632;</div>
+          <h3>CV</h3>
+          <p>Academic background, experience, and full curriculum vitae download</p>
+        </a>
+        <a href="about.html" class="quick-card">
+          <div class="quick-card-icon">&#9632;</div>
+          <h3>About</h3>
+          <p>Background, academic journey, and ways to get in touch</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Lilian Dart</span>
+      <div class="footer-links">
+        <a href="mailto:lilian.dart@mail.utoronto.ca">Email</a>
+        <a href="https://ca.linkedin.com/in/lilian-dart" target="_blank">LinkedIn</a>
+        <a href="https://x.com/liliandart" target="_blank">X</a>
+      </div>
+      <p class="footer-copy">PhD Candidate, Department of Human Geography · University of Toronto</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>initNav('home');</script>
+</body>
+</html>
