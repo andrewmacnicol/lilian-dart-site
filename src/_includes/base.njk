@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  {% if activePage == 'home' %}<meta name="description" content="{{ home.meta_description }}" />{% endif %}
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-name">{{ site.name }}</a>
+    <ul class="nav-links">
+      <li><a href="/" data-page="home">Home</a></li>
+      <li><a href="/about.html" data-page="about">About</a></li>
+      <li><a href="/research.html" data-page="research">Research</a></li>
+      <li><a href="/teaching.html" data-page="teaching">Teaching</a></li>
+      <li><a href="/cv.html" data-page="cv">CV</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="/" data-page="home">Home</a>
+    <a href="/about.html" data-page="about">About</a>
+    <a href="/research.html" data-page="research">Research</a>
+    <a href="/teaching.html" data-page="teaching">Teaching</a>
+    <a href="/cv.html" data-page="cv">CV</a>
+  </div>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">{{ site.name }}</span>
+      <div class="footer-links">
+        <a href="mailto:{{ site.email }}">Email</a>
+        <a href="{{ site.linkedin }}" target="_blank">LinkedIn</a>
+        <a href="{{ site.twitter }}" target="_blank">X</a>
+      </div>
+      <p class="footer-copy">{{ site.footer_tagline }}</p>
+    </div>
+  </footer>
+
+  <script src="/nav.js"></script>
+  <script>initNav('{{ activePage }}');</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: "Lilian Dart — Geographer & Researcher"
+activePage: home
+permalink: index.html
+---
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">{{ home.eyebrow }}</p>
+    <h1 class="hero-name">Lilian<br><em>Dart</em></h1>
+    <p class="hero-bio">{{ home.bio }}</p>
+    <div class="hero-ctas">
+      <a href="/research.html" class="btn btn-primary">View my research</a>
+      <a href="/about.html" class="btn btn-outline">About me</a>
+    </div>
+    <div class="interest-tags">
+      {% for tag in home.interest_tags %}
+      <span class="tag{% if tag.style == 'blue' %} blue{% endif %}">{{ tag.label }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-image-frame">
+      <img src="{{ about.photo }}" alt="{{ site.name }}" />
+    </div>
+    <div class="hero-accent"></div>
+  </div>
+</section>
+
+<section class="quick-links">
+  <div class="quick-links-inner">
+    {% for link in home.quick_links %}
+    <a href="/{{ link.href }}" class="quick-card">
+      <div class="quick-card-icon">&#9632;</div>
+      <h3>{{ link.title }}</h3>
+      <p>{{ link.description }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>

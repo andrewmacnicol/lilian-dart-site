@@ -1,0 +1,82 @@
+---
+layout: base.njk
+title: "About — Lilian Dart"
+activePage: about
+permalink: about.html
+---
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">{{ about.hero_label }}</p>
+    <h1>{{ about.hero_title_line1 }}<br>{{ about.hero_title_line2 }}</h1>
+  </div>
+</div>
+
+<div class="content-section">
+  <div class="about-grid">
+
+    <div class="about-main">
+      <p class="section-label">Biography</p>
+      {% for para in about.biography %}
+      <p>{{ para }}</p>
+      {% endfor %}
+
+      <div style="margin-top: 2.5rem;">
+        <p class="section-label">Fields of study</p>
+        <div class="fields-of-study">
+          {% for field in about.fields_of_study %}
+          <span class="tag blue">{{ field }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <p class="section-label">Areas of interest</p>
+        <p>{{ about.areas_of_interest }}</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <p class="section-label">Education</p>
+        <div>
+          {% for edu in about.education %}
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <p class="edu-degree">{{ edu.degree }}{% if edu.current %} <span style="color:var(--ink-muted); font-weight:400;">(current)</span>{% endif %}{% if edu.minor %} <span style="color:var(--ink-muted); font-weight:400;">(minor: {{ edu.minor }})</span>{% endif %}</p>
+              <p class="edu-school">{{ edu.school }}{% if edu.supervisor %} · Supervisor: {{ edu.supervisor }}{% endif %}{% if edu.cohort %} · Cohort {{ edu.cohort }}{% endif %}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar-photo">
+      <div class="photo-frame">
+        <img src="{{ about.photo }}" alt="{{ site.name }}" />
+      </div>
+
+      <div class="contact-block">
+        <h3>Contact</h3>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Office</span>
+          <span class="contact-value">{{ site.office }}<br>{{ site.office_line2 }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Pronouns</span>
+          <span class="contact-value">{{ site.pronouns }}</span>
+        </div>
+        <div class="social-links">
+          <a href="{{ site.linkedin }}" target="_blank" class="social-link">LinkedIn</a>
+          <a href="{{ site.twitter }}" target="_blank" class="social-link">X</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>

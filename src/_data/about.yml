@@ -1,0 +1,29 @@
+hero_label: "About"
+hero_title_line1: "Researcher, instructor,"
+hero_title_line2: "and geographer"
+biography:
+  - "I am a geographer researching how human-environment relationships shape behaviour, participation, and environmental decision-making in Canada. My doctoral work examines how rural landowners navigate tensions between capital and place in their stewardship decisions, and how collaborative governance arrangements can support more just and sustainable outcomes."
+  - "With a strong academic foundation spanning both the sciences and social sciences, my previous work has explored community-based conservation, community health, and housing policy. This breadth of experience enables me to approach research through multiple lenses, drawing from a range of fields and methodologies."
+  - "Alongside my doctoral work, I contribute to projects on faith-based environmentalism, commons and commoning, biodiversity policy, and housing and homelessness policy."
+fields_of_study:
+  - "Environment & Climate"
+  - "Rural geography"
+  - "Social & Political Geography"
+areas_of_interest: "Conservation · Climate change · Working landscapes · Social networks · Place · Environmental communication · Collaborative governance · Rural geography · Canada"
+education:
+  - degree: "PhD, Human Geography"
+    school: "University of Toronto"
+    supervisor: "Andrea Olive"
+    cohort: "2023–2024"
+    year: "2023–present"
+    current: true
+  - degree: "MA, Sustainability Studies"
+    school: "Trent University"
+    year: "Add year"
+    current: false
+  - degree: "BSc, Biology"
+    school: "Mount Allison University"
+    minor: "Geography"
+    year: "Add year"
+    current: false
+photo: "/uploads/ld.jpg"

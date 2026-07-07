@@ -1,0 +1,56 @@
+---
+layout: base.njk
+title: "Research — Lilian Dart"
+activePage: research
+permalink: research.html
+---
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">{{ research.hero_label }}</p>
+    <h1>{{ research.hero_title }}</h1>
+  </div>
+</div>
+
+<!-- DOCTORAL RESEARCH -->
+<div class="content-section">
+  <p class="section-label">Doctoral research</p>
+
+  <div class="research-focus">
+    <p>{{ research.focus_statement }}</p>
+  </div>
+
+  <p>{{ research.methods_paragraph }}</p>
+</div>
+
+<!-- CURRENT PROJECTS -->
+<div class="content-section">
+  <p class="section-label">Current projects</p>
+  <div class="project-grid">
+    {% for project in research.projects %}
+    <div class="project-card">
+      <span class="project-tag">{{ project.tag }}</span>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="content-section">
+  <p class="section-label">Publications</p>
+  <div class="pub-list">
+    {% for pub in research.publications %}
+    <div class="pub-card">
+      <p class="pub-year">{{ pub.year }}</p>
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-authors">{{ pub.authors }}</p>
+      <p class="pub-venue">{{ pub.venue }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <p style="font-size:0.85rem; color:var(--ink-muted);">For the most current list of publications and working papers, please <a href="mailto:{{ site.email }}" style="color:var(--green-deep);">get in touch</a> or visit my <a href="{{ site.linkedin }}" target="_blank" style="color:var(--green-deep);">LinkedIn profile</a>.</p>
+  </div>
+</div>

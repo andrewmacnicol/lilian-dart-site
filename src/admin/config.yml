@@ -1,0 +1,147 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Site-wide (Contact & Footer)"
+    files:
+      - file: "src/_data/site.yml"
+        name: "site"
+        label: "Contact & Footer"
+        fields:
+          - { label: "Full name", name: "name", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Office — line 1", name: "office", widget: "string" }
+          - { label: "Office — line 2", name: "office_line2", widget: "string" }
+          - { label: "Pronouns", name: "pronouns", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "X / Twitter URL", name: "twitter", widget: "string" }
+          - { label: "Footer tagline", name: "footer_tagline", widget: "string" }
+
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "src/_data/home.yml"
+        name: "home"
+        label: "Home Page Content"
+        fields:
+          - { label: "SEO description", name: "meta_description", widget: "text" }
+          - { label: "Eyebrow (small label above name)", name: "eyebrow", widget: "string" }
+          - { label: "Bio paragraph", name: "bio", widget: "text" }
+          - label: "Interest tags"
+            name: "interest_tags"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Highlight style", name: "style", widget: "select", options: ["blue", "plain"] }
+          - label: "Quick links"
+            name: "quick_links"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Link (page file, e.g. about.html)", name: "href", widget: "string" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "src/_data/about.yml"
+        name: "about"
+        label: "About Page Content"
+        fields:
+          - { label: "Page label", name: "hero_label", widget: "string" }
+          - { label: "Heading — line 1", name: "hero_title_line1", widget: "string" }
+          - { label: "Heading — line 2", name: "hero_title_line2", widget: "string" }
+          - label: "Biography paragraphs"
+            name: "biography"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Fields of study"
+            name: "fields_of_study"
+            widget: "list"
+            field: { label: "Field", name: "field", widget: "string" }
+          - { label: "Areas of interest", name: "areas_of_interest", widget: "text" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "School", name: "school", widget: "string" }
+              - { label: "Year(s) — shown on CV", name: "year", widget: "string" }
+              - { label: "Currently studying?", name: "current", widget: "boolean", default: false }
+              - { label: "Supervisor (optional)", name: "supervisor", widget: "string", required: false }
+              - { label: "Cohort (optional)", name: "cohort", widget: "string", required: false }
+              - { label: "Minor (optional)", name: "minor", widget: "string", required: false }
+          - { label: "Photo", name: "photo", widget: "image" }
+
+  - name: "research"
+    label: "Research Page"
+    files:
+      - file: "src/_data/research.yml"
+        name: "research"
+        label: "Research Page Content"
+        fields:
+          - { label: "Page label", name: "hero_label", widget: "string" }
+          - { label: "Heading", name: "hero_title", widget: "string" }
+          - { label: "Doctoral focus statement", name: "focus_statement", widget: "text" }
+          - { label: "Methods paragraph", name: "methods_paragraph", widget: "text" }
+          - label: "Current projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Publications"
+            name: "publications"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Authors", name: "authors", widget: "string" }
+              - { label: "Venue", name: "venue", widget: "string" }
+
+  - name: "teaching"
+    label: "Teaching Page"
+    files:
+      - file: "src/_data/teaching.yml"
+        name: "teaching"
+        label: "Teaching Page Content"
+        fields:
+          - { label: "Page label", name: "hero_label", widget: "string" }
+          - { label: "Heading", name: "hero_title", widget: "string" }
+          - { label: "Philosophy quote", name: "philosophy_quote", widget: "text" }
+          - { label: "Philosophy paragraph", name: "philosophy_paragraph", widget: "text" }
+          - label: "Courses"
+            name: "courses"
+            widget: "list"
+            fields:
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Course title", name: "title", widget: "string" }
+              - { label: "Period tag (e.g. Winter 2025)", name: "period_tag", widget: "string" }
+              - { label: "Level tag (e.g. Undergraduate)", name: "level_tag", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Areas of expertise"
+            name: "expertise"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+  - name: "cv"
+    label: "CV Page"
+    files:
+      - file: "src/_data/cv.yml"
+        name: "cv"
+        label: "CV Page Content"
+        fields:
+          - { label: "Page label", name: "hero_label", widget: "string" }
+          - { label: "Heading", name: "hero_title", widget: "string" }
+          - { label: "CV PDF", name: "pdf_filename", widget: "file", required: false, hint: "Upload the CV as a PDF" }
+          - { label: "PDF last updated", name: "pdf_last_updated", widget: "string" }

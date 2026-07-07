@@ -1,0 +1,55 @@
+---
+layout: base.njk
+title: "Teaching — Lilian Dart"
+activePage: teaching
+permalink: teaching.html
+---
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">{{ teaching.hero_label }}</p>
+    <h1>{{ teaching.hero_title }}</h1>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="content-section">
+  <p class="section-label">Approach</p>
+  <div class="teaching-philosophy">
+    <p>{{ teaching.philosophy_quote }}</p>
+  </div>
+  <p>{{ teaching.philosophy_paragraph }}</p>
+</div>
+
+<!-- COURSES -->
+<div class="content-section">
+  <p class="section-label">Courses</p>
+
+  {% for course in teaching.courses %}
+  <div class="course-card">
+    <p class="course-role">{{ course.role }}</p>
+    <p class="course-title">{{ course.title }}</p>
+    <div class="course-meta">
+      <span class="tag">{{ course.period_tag }}</span>
+      <span class="tag blue">{{ course.level_tag }}</span>
+    </div>
+    <p class="course-desc" style="margin-top:0.75rem;">{{ course.description }}</p>
+  </div>
+  {% endfor %}
+
+  <div class="note-box">
+    <p>For information on current teaching availability or to discuss potential collaborations, please <a href="mailto:{{ site.email }}">get in touch by email</a>.</p>
+  </div>
+</div>
+
+<!-- AREAS OF EXPERTISE -->
+<div class="content-section">
+  <p class="section-label">Areas of teaching expertise</p>
+  <div class="expertise-grid">
+    {% for item in teaching.expertise %}
+    <div class="expertise-item">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
