@@ -26,4 +26,4 @@ education:
     minor: "Geography"
     year: "Add year"
     current: false
-photo: "/uploads/ld.jpg"
+photo: "uploads/ld.jpg"
