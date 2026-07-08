@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lilian-dart-site",
+  "main": "worker.js",
+  "compatibility_date": "2026-07-08",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "_site",
+    "binding": "ASSETS"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
