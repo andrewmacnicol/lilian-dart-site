@@ -3,6 +3,9 @@
   "name": "lilian-dart-site",
   "main": "worker.js",
   "compatibility_date": "2026-07-08",
+  "vars": {
+    "GITHUB_CLIENT_ID": "Ov23liylwtGC6YJ42hyi"
+  },
   "observability": {
     "enabled": true
   },
