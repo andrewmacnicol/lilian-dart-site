@@ -104,7 +104,12 @@ collections:
           - label: "Publications"
             name: "publications"
             widget: "list"
-            field: { label: "Publication", name: "publication", widget: "apa-publication" }
+            fields:
+              - { label: "Paste APA citation", name: "citation_helper", widget: "apa-citation-helper", required: false }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Authors", name: "authors", widget: "string" }
+              - { label: "Venue", name: "venue", widget: "string" }
 
   - name: "teaching"
     label: "Teaching Page"

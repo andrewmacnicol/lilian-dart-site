@@ -1,11 +1,14 @@
 /*
  * Custom Decap CMS widget for the Research page's "Publications" list.
  * Lets an editor paste an APA 7th-edition reference and auto-fills the
- * Year / Title / Authors / Venue fields, which remain individually editable.
+ * sibling Year / Title / Authors / Venue fields in the same list item.
  *
- * Registered as the singular `field:` of the publications list widget, so
- * each list item's stored value is exactly the flat object this widget
- * manages (no extra nesting in the saved YAML).
+ * This widget's own value is never persisted (we never call
+ * this.props.onChange for it) — it only reaches into its sibling fields'
+ * real <input> elements and dispatches native input events, so those
+ * fields' own onChange handlers do the actual, officially-supported write.
+ * This keeps each publication's saved YAML shape exactly
+ * { year, title, authors, venue }, unchanged from before this widget existed.
  */
 (function () {
   function parseApaCitation(raw) {
@@ -32,27 +35,44 @@
 
     if (!authors || !title) return null;
 
-    return { year: year, title: title, authors: authors, venue: venue };
+    return { Year: year, Title: title, Authors: authors, Venue: venue };
   }
 
-  function getField(value, key) {
-    if (value && typeof value.get === 'function') return value.get(key) || '';
-    return (value && value[key]) || '';
+  function setNativeInputValue(input, value) {
+    var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    setter.call(input, value);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
   }
 
-  function setField(value, key, val) {
-    if (value && typeof value.set === 'function') return value.set(key, val);
-    var next = {};
-    if (value) {
-      Object.keys(value).forEach(function (k) {
-        next[k] = value[k];
+  function findInputByLabel(scope, labelText) {
+    var labels = Array.prototype.slice.call(scope.querySelectorAll('label'));
+    var label = labels.filter(function (l) {
+      return l.textContent.trim() === labelText;
+    })[0];
+    if (!label) return null;
+    var container =
+      (label.closest && label.closest('[aria-label="string field"]')) ||
+      (label.parentElement && label.parentElement.parentElement);
+    return container ? container.querySelector('input') : null;
+  }
+
+  function findItemScope(node) {
+    var labelsWanted = ['Year', 'Title', 'Authors', 'Venue'];
+    var el = node;
+    for (var i = 0; i < 8 && el; i++) {
+      var labels = Array.prototype.slice.call(el.querySelectorAll('label')).map(function (l) {
+        return l.textContent.trim();
       });
+      var hasAll = labelsWanted.every(function (want) {
+        return labels.indexOf(want) !== -1;
+      });
+      if (hasAll) return el;
+      el = el.parentElement;
     }
-    next[key] = val;
-    return next;
+    return null;
   }
 
-  var ApaPublicationControl = createClass({
+  var ApaCitationHelperControl = createClass({
     getInitialState: function () {
       return { pasteText: '', status: '' };
     },
@@ -67,32 +87,57 @@
         this.setState({ status: "Couldn't read that citation — check the fields below and fill in manually." });
         return;
       }
-      var value = this.props.value;
-      value = setField(value, 'year', parsed.year);
-      value = setField(value, 'title', parsed.title);
-      value = setField(value, 'authors', parsed.authors);
-      value = setField(value, 'venue', parsed.venue);
-      this.props.onChange(value);
-      this.setState({ status: 'Filled in from citation — double-check before saving.' });
-    },
 
-    handleFieldChange: function (key) {
+      var scope = findItemScope(this._root);
+      if (!scope) {
+        this.setState({ status: "Couldn't find this publication's fields — fill them in manually." });
+        return;
+      }
+
+      // Each write below triggers Decap's own field onChange synchronously.
+      // Firing all four in the same tick races with Decap's state update — the
+      // sibling controls read a stale snapshot of the item and only the last
+      // write sticks. Staggering across ticks lets each one commit first.
       var self = this;
-      return function (e) {
-        self.props.onChange(setField(self.props.value, key, e.target.value));
-      };
+      var labels = ['Year', 'Title', 'Authors', 'Venue'];
+      var missing = [];
+
+      function applyNext(i) {
+        if (i >= labels.length) {
+          self.setState({
+            status:
+              missing.length === 0
+                ? 'Filled in from citation — double-check before saving.'
+                : 'Filled in what it could — missing: ' + missing.join(', '),
+          });
+          return;
+        }
+        var label = labels[i];
+        var input = findInputByLabel(scope, label);
+        if (input) {
+          setNativeInputValue(input, parsed[label]);
+        } else {
+          missing.push(label);
+        }
+        setTimeout(function () {
+          applyNext(i + 1);
+        }, 40);
+      }
+
+      applyNext(0);
     },
 
     render: function () {
-      var value = this.props.value;
+      var self = this;
       var inputStyle = {
         display: 'block',
         width: '100%',
-        marginBottom: '8px',
+        marginBottom: '6px',
         padding: '8px 10px',
         border: '1px solid #dfdfe3',
         borderRadius: '4px',
         fontSize: '14px',
+        fontFamily: 'inherit',
       };
       var labelStyle = {
         display: 'block',
@@ -102,106 +147,54 @@
         marginBottom: '4px',
       };
 
-      return h('div', { className: this.props.classNameWrapper }, [
-        h(
-          'div',
-          {
-            key: 'paste-box',
-            style: {
-              border: '1px dashed #b3b3b8',
-              borderRadius: '6px',
-              padding: '10px',
-              marginBottom: '14px',
-              background: '#fafafa',
-            },
+      return h(
+        'div',
+        {
+          className: this.props.classNameWrapper,
+          ref: function (el) {
+            self._root = el;
           },
-          [
-            h(
-              'label',
-              { key: 'paste-label', style: labelStyle },
-              'Paste APA 7th ed. citation to auto-fill the fields below'
-            ),
-            h('textarea', {
-              key: 'paste-input',
-              rows: 3,
-              style: Object.assign({}, inputStyle, { fontFamily: 'inherit', marginBottom: '6px' }),
-              placeholder:
-                'Dart, L. (2025). The power of care for climate justice. The Nature of Cities.',
-              value: this.state.pasteText,
-              onChange: this.handlePasteTextChange,
-            }),
-            h(
-              'button',
-              {
-                key: 'parse-button',
-                type: 'button',
-                onClick: this.handleParse,
-                style: {
-                  padding: '6px 12px',
-                  fontSize: '13px',
-                  borderRadius: '4px',
-                  border: '1px solid #8b8b8f',
-                  background: '#fff',
-                  cursor: 'pointer',
-                },
+          style: {
+            border: '1px dashed #b3b3b8',
+            borderRadius: '6px',
+            padding: '10px',
+            background: '#fafafa',
+          },
+        },
+        [
+          h('div', { key: 'paste-label', style: labelStyle }, 'Paste APA 7th ed. citation to auto-fill the fields below'),
+          h('textarea', {
+            key: 'paste-input',
+            rows: 3,
+            style: inputStyle,
+            placeholder: 'Dart, L. (2025). The power of care for climate justice. The Nature of Cities.',
+            value: this.state.pasteText,
+            onChange: this.handlePasteTextChange,
+          }),
+          h(
+            'button',
+            {
+              key: 'parse-button',
+              type: 'button',
+              onClick: this.handleParse,
+              style: {
+                padding: '6px 12px',
+                fontSize: '13px',
+                borderRadius: '4px',
+                border: '1px solid #8b8b8f',
+                background: '#fff',
+                cursor: 'pointer',
               },
-              'Fill fields from citation'
-            ),
-            this.state.status
-              ? h('div', { key: 'status', style: { fontSize: '12px', marginTop: '6px', color: '#6b6b6f' } }, this.state.status)
-              : null,
-          ]
-        ),
-
-        h('label', { key: 'year-label', style: labelStyle }, 'Year'),
-        h('input', {
-          key: 'year-input',
-          type: 'text',
-          style: inputStyle,
-          value: getField(value, 'year'),
-          onChange: this.handleFieldChange('year'),
-        }),
-
-        h('label', { key: 'title-label', style: labelStyle }, 'Title'),
-        h('input', {
-          key: 'title-input',
-          type: 'text',
-          style: inputStyle,
-          value: getField(value, 'title'),
-          onChange: this.handleFieldChange('title'),
-        }),
-
-        h('label', { key: 'authors-label', style: labelStyle }, 'Authors'),
-        h('input', {
-          key: 'authors-input',
-          type: 'text',
-          style: inputStyle,
-          value: getField(value, 'authors'),
-          onChange: this.handleFieldChange('authors'),
-        }),
-
-        h('label', { key: 'venue-label', style: labelStyle }, 'Venue'),
-        h('input', {
-          key: 'venue-input',
-          type: 'text',
-          style: inputStyle,
-          value: getField(value, 'venue'),
-          onChange: this.handleFieldChange('venue'),
-        }),
-      ]);
+            },
+            'Fill fields from citation'
+          ),
+          this.state.status
+            ? h('div', { key: 'status', style: { fontSize: '12px', marginTop: '6px', color: '#6b6b6f' } }, this.state.status)
+            : null,
+        ]
+      );
     },
   });
 
-  var ApaPublicationPreview = createClass({
-    render: function () {
-      var value = this.props.value;
-      var authors = getField(value, 'authors');
-      var year = getField(value, 'year');
-      var title = getField(value, 'title');
-      var venue = getField(value, 'venue');
-      return h('div', {}, authors + ' (' + year + '). ' + title + '. ' + venue);
-    },
-  });
-
-  CMS.registerWidget('apa-publication', ApaPublicationControl, ApaPublicationPreview);
+  CMS.registerWidget('apa-citation-helper', ApaCitationHelperControl);
 })();
