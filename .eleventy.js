@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy("src/style.css");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/nav.js");
   eleventyConfig.addPassthroughCopy("src/uploads");
   eleventyConfig.addPassthroughCopy("src/admin");

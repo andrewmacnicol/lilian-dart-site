@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lilian-dart-site.andrewmacnicol.workers.dev/sitemap.xml

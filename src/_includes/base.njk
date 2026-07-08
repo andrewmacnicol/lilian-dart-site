@@ -4,8 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }}</title>
-  {% if activePage == 'home' %}<meta name="description" content="{{ home.meta_description }}" />{% endif %}
+  {% set pageDescription = description or home.meta_description %}
+  <meta name="description" content="{{ pageDescription }}" />
+  <link rel="canonical" href="{{ site.url }}/{{ permalink }}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ pageDescription }}" />
+  <meta property="og:url" content="{{ site.url }}/{{ permalink }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ pageDescription }}" />
+
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.name }}",
+    "jobTitle": "PhD Candidate, Human Geography",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Toronto"
+    },
+    "email": "mailto:{{ site.email }}",
+    "url": "{{ site.url }}/index.html",
+    "sameAs": [
+      "{{ site.linkedin }}",
+      "{{ site.twitter }}"
+    ]
+  }
+  </script>
 </head>
 <body>
 
