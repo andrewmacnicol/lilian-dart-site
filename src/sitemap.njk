@@ -4,9 +4,9 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in ["index.html", "about.html", "research.html", "teaching.html", "cv.html"] %}
+{%- for path in ["/", "/about", "/research", "/teaching", "/cv"] %}
   <url>
-    <loc>{{ site.url }}/{{ page }}</loc>
+    <loc>{{ site.url }}{{ path }}</loc>
   </url>
 {%- endfor %}
 </urlset>

@@ -6,12 +6,12 @@
   <title>{{ title }}</title>
   {% set pageDescription = description or home.meta_description %}
   <meta name="description" content="{{ pageDescription }}" />
-  <link rel="canonical" href="{{ site.url }}/{{ permalink }}" />
+  <link rel="canonical" href="{{ site.url }}{{ canonicalPath }}" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:description" content="{{ pageDescription }}" />
-  <meta property="og:url" content="{{ site.url }}/{{ permalink }}" />
+  <meta property="og:url" content="{{ site.url }}{{ canonicalPath }}" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ pageDescription }}" />
@@ -29,7 +29,7 @@
       "name": "University of Toronto"
     },
     "email": "mailto:{{ site.email }}",
-    "url": "{{ site.url }}/index.html",
+    "url": "{{ site.url }}/",
     "sameAs": [
       "{{ site.linkedin }}",
       "{{ site.twitter }}"
