@@ -2,7 +2,7 @@ backend:
   name: github
   repo: andrewmacnicol/lilian-dart-site
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-PAGES-DOMAIN
+  base_url: https://lilian-dart-site.andrewmacnicol.workers.dev
   auth_endpoint: api/auth
 
 local_backend: true
