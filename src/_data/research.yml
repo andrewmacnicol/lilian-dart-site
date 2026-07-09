@@ -12,22 +12,33 @@ methods_paragraph: Rooted in human geography, my research sits at the
   their lives.
 projects:
   - tag: Doctoral
+    status: current
     title: Rural stewardship & collaborative governance
     description: How landowners navigate tensions between capital and place, and how
       governance arrangements can support just, sustainable outcomes.
   - tag: Collaborative
-    title: Faith-based environmentalism
-    description: Examining how religious communities engage with environmental
-      issues and contribute to sustainability movements.
-  - tag: Collaborative
-    title: Commons & commoning
-    description: Exploring how shared resources are governed and the social dynamics
-      of collective management in Canadian contexts.
-  - tag: Collaborative
+    status: current
     title: Biodiversity policy
     description: Contributing to work on policy frameworks that support biodiversity
       conservation and environmental governance in Canada.
   - tag: Collaborative
+    status: current
+    title: AI and multilingual learners
+    description: Investigating how generative AI tools are shaping learning
+      experiences and outcomes for multilingual students at the University of
+      Toronto Mississauga.
+  - tag: Collaborative
+    status: past
+    title: Faith-based environmentalism
+    description: Examining how religious communities engage with environmental
+      issues and contribute to sustainability movements.
+  - tag: Collaborative
+    status: past
+    title: Commons & commoning
+    description: Exploring how shared resources are governed and the social dynamics
+      of collective management in Canadian contexts.
+  - tag: Collaborative
+    status: past
     title: Housing & homelessness policy
     description: Ongoing research on governmental responses to housing crises in
       mid-sized Ontario cities and cross-sectoral approaches to homelessness.

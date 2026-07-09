@@ -94,11 +94,16 @@ collections:
           - { label: "Heading", name: "hero_title", widget: "string" }
           - { label: "Doctoral focus statement", name: "focus_statement", widget: "text" }
           - { label: "Methods paragraph", name: "methods_paragraph", widget: "text" }
-          - label: "Current projects"
+          - label: "Projects"
             name: "projects"
             widget: "list"
             fields:
               - { label: "Tag", name: "tag", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["current", "past"]
+                default: "current"
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           - label: "Publications"
@@ -110,6 +115,41 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Authors", name: "authors", widget: "string" }
               - { label: "Venue", name: "venue", widget: "string" }
+
+  - name: "research_communication"
+    label: "Research Communication Page"
+    files:
+      - file: "src/_data/researchCommunication.yml"
+        name: "research_communication"
+        label: "Research Communication Page Content"
+        fields:
+          - { label: "Page label", name: "hero_label", widget: "string" }
+          - { label: "Heading", name: "hero_title", widget: "string" }
+          - { label: "Intro paragraph", name: "intro_paragraph", widget: "text" }
+          - label: "Presentations & media"
+            name: "items"
+            widget: "list"
+            hint: "Shown on the page ordered most recent to least recent, using the sort date."
+            types:
+              - label: "Presentation"
+                name: "presentation"
+                widget: "object"
+                fields:
+                  - { label: "Sort date (YYYY-MM-DD)", name: "sort_date", widget: "string", hint: "Used only to order items, most recent first." }
+                  - { label: "Display date", name: "date", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Venue", name: "venue", widget: "string" }
+                  - { label: "Location", name: "location", widget: "string", required: false }
+              - label: "Podcast"
+                name: "podcast"
+                widget: "object"
+                fields:
+                  - { label: "Sort date (YYYY-MM-DD)", name: "sort_date", widget: "string", hint: "Used only to order items, most recent first." }
+                  - { label: "Display date", name: "date", widget: "string" }
+                  - { label: "Episode title", name: "title", widget: "string" }
+                  - { label: "Show name", name: "show", widget: "string" }
+                  - { label: "Embed URL", name: "embed_url", widget: "string" }
+                  - { label: "Episode page URL", name: "episode_url", widget: "string" }
 
   - name: "teaching"
     label: "Teaching Page"
