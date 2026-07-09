@@ -26,6 +26,18 @@ canonicalPath: /cv
     </a>
   </div>
 
+  {% if cv.pdf_filename %}
+  <!-- EMBEDDED PDF -->
+  <div class="cv-pdf-embed">
+    <object data="{{ cv.pdf_filename }}" type="application/pdf">
+      <p class="cv-pdf-fallback">
+        Your browser can't display the PDF inline.
+        <a href="{{ cv.pdf_filename }}">Click here to view or download it</a>.
+      </p>
+    </object>
+  </div>
+  {% endif %}
+
   <!-- EDUCATION (shared with About) -->
   <div class="cv-section">
     <p class="cv-section-title">Education</p>
