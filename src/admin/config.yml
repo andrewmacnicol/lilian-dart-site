@@ -2,7 +2,7 @@ backend:
   name: github
   repo: andrewmacnicol/lilian-dart-site
   branch: main
-  base_url: https://lilian-dart-site.andrewmacnicol.workers.dev
+  base_url: https://liliandart.ca
   auth_endpoint: api/auth
 
 local_backend: true

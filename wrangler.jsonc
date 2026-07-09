@@ -6,6 +6,10 @@
   "vars": {
     "GITHUB_CLIENT_ID": "Ov23liylwtGC6YJ42hyi"
   },
+  "routes": [
+    { "pattern": "liliandart.ca", "custom_domain": true },
+    { "pattern": "www.liliandart.ca", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
   },
