@@ -8,35 +8,37 @@ methods_paragraph: My work is qualitative and I draw heavily on interviews and d
 projects:
   - tag: Doctoral
     status: current
-    title: Rural stewardship & collaborative governance
-    description: How landowners navigate tensions between capital and place, and how
-      governance arrangements can support just, sustainable outcomes.
+    title: Agricultural Stewardship & Collaborative Governance
+    description: My dissertation examines how agricultural producers navigate the
+      tensions between capital and place in stewardship decisions, and how
+      communication and collaborative governance can support more just and
+      sustainable outcomes on working landscapes.
   - tag: Collaborative
     status: current
-    title: Biodiversity policy
-    description: Contributing to work on policy frameworks that support biodiversity
-      conservation and environmental governance in Canada.
+    title: Biodiversity Policy
+    description: "Contributing to work on working landscapes in Canada (PI: Dr.
+      Andrea Olive; Co-PI: Dr. Jeremy Pittman, Dr. Raphael Ayambire)."
   - tag: Collaborative
     status: current
-    title: AI and multilingual learners
-    description: Investigating how generative AI tools are shaping learning
+    title: AI and Multilingual Learners
+    description: "Investigating how generative AI tools are shaping learning
       experiences and outcomes for multilingual students at the University of
-      Toronto Mississauga.
+      Toronto Mississauga (PI: Dr. Michael DeBraga)."
   - tag: Collaborative
     status: past
-    title: Faith-based environmentalism
-    description: Examining how religious communities engage with environmental
-      issues and contribute to sustainability movements.
+    title: Faith-Based Environmentalism
+    description: "Examined how religious communities in Toronto engage with
+      environmental issues (PI: Dr. Tanhum Yoreh; Co-PI: Dr. Andrea Olive)."
   - tag: Collaborative
     status: past
-    title: Commons & commoning
-    description: Exploring how shared resources are governed and the social dynamics
-      of collective management in Canadian contexts.
+    title: Commoning & Climate Justice
+    description: "Explored how undergraduate university students engage in climate
+      justice (PI: Dr. Praneeta Mudaliar)"
   - tag: Collaborative
     status: past
-    title: Housing & homelessness policy
-    description: Ongoing research on governmental responses to housing crises in
-      mid-sized Ontario cities and cross-sectoral approaches to homelessness.
+    title: "Housing & Homelessness "
+    description: "Contributed to work on community organizing to address
+      homelessness in a mid-sized Ontario city (PI: Dr. Naomi Nichols). "
 publications:
   - year: "2025"
     title: The Power of Care for Climate Justice
