@@ -1,28 +1,43 @@
-hero_label: "Teaching"
-hero_title: "Teaching experience"
-philosophy_quote: "I bring the same breadth and curiosity that shapes my research into the classroom — drawing connections across disciplines and encouraging students to think critically about how people, places, and environments are entangled."
-philosophy_paragraph: "As a sessional instructor and teaching assistant at the University of Toronto, I am committed to creating inclusive, engaging learning environments. My teaching draws on my interdisciplinary background across the sciences and social sciences, supporting students to develop both analytical skills and an appreciation for the complexity of human-environment relationships."
+hero_label: Teaching
+hero_title: Teaching Experience
+philosophy_quote: I bring the same breadth and curiosity that shapes my research
+  into the classroom. I aim to draw connections across disciplines and encourage
+  my students to think critically about how people, places, and environments are
+  entangled.
+philosophy_paragraph: As a course instructor at the University of Toronto, I am
+  committed to creating inclusive, engaging learning environments. My teaching
+  draws on my interdisciplinary background across the sciences and social
+  sciences,  and I like to be creative in my pedagogical approach, teaching
+  students through games, simulations, and discussion. While I believe teaching
+  content is important, I put an equal emphasis on fostering growth and critical
+  thinking in my students.
 courses:
-  - role: "Sessional Instructor · University of Toronto"
-    title: "Add your course name here"
-    period_tag: "Year / Semester"
-    level_tag: "Undergraduate / Graduate"
-    description: "Add a short course description here — one or two sentences about what the course covers and who it's for."
-  - role: "Teaching Assistant · University of Toronto"
-    title: "Add your TA course name here"
-    period_tag: "Year / Semester"
-    level_tag: "Undergraduate"
-    description: "Brief description of the course and your role as TA."
+  - role: Sessional Instructor · University of Toronto
+    title: "ENV435: Governing the Commons"
+    period_tag: Winter 2026
+    level_tag: Undergraduate
+    description: Common-pool resources (CPRs) include pastures, forests, watersheds,
+      ocean fisheries, traffic, the Internet, and the Earth’s climate. CPRs
+      present a variety of social dilemmas because it is difficult to exclude
+      and prevent resources users from accessing, using, and polluting a
+      resource. Individual self-interest may put CPRs at risk of overuse,
+      overconsumption, and exploitation to result in a “tragedy of the commons”
+      scenario. However resource users across the world, have devised rules and
+      strategies to avoid such tragedies to sustain CPRs over centuries. In this
+      course, through playing games in the classroom, we will learn whether and
+      how theories of collective action, cooperation, and institutions provide
+      insight into achieving conservation of CPRs that delivers on the twin
+      goals of social and environmental justice.
 expertise:
-  - title: "Human geography"
-    description: "Place, space, environment, and society"
-  - title: "Environmental studies"
-    description: "Conservation, climate change, sustainability"
-  - title: "Rural & regional"
-    description: "Rural communities, land use, governance"
-  - title: "Qualitative methods"
-    description: "Interview, fieldwork, participatory approaches"
-  - title: "Policy analysis"
-    description: "Housing, homelessness, environmental policy"
-  - title: "Sciences & social sciences"
-    description: "Bridging natural and human science traditions"
+  - title: Human Geography
+    description: Place, space, environment, and society
+  - title: Environmental Studies
+    description: Conservation, climate change, sustainability
+  - title: Rural Geography
+    description: Rural communities, land use, governance
+  - title: Qualitative Methods
+    description: Interview, fieldwork, participatory approaches
+  - title: Policy Analysis
+    description: Housing, homelessness, environmental policy
+  - title: Sciences & Social Sciences
+    description: Bridging natural and social worlds

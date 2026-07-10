@@ -1,12 +1,11 @@
 hero_label: About
-hero_title_line1: Researcher, instructor,
-hero_title_line2: and geographer
+hero_title_line1: "Interdisciplinary researcher "
+hero_title_line2: and educator
 biography:
-  - I am a geographer researching how human-environment relationships shape
-    behaviour, participation, and environmental decision-making in Canada. My
-    doctoral work examines how rural landowners navigate tensions between
-    capital and place in their stewardship decisions, and how collaborative
-    governance arrangements can support more just and sustainable outcomes.
+  - "I am a geographer researching environmental governance. My doctoral work
+    focuses on environmental communication, social networks, and stewardship
+    adoption on Canada’s agricultural landscapes. I have interests in
+    collaboration, applied environmental policy, and qualitative methodology. "
   - With a strong academic foundation spanning both the sciences and social
     sciences, my previous work has explored community-based conservation,
     community health, and housing policy. This breadth of experience enables me
@@ -16,18 +15,17 @@ biography:
     environmentalism, commons and commoning, biodiversity policy, and housing
     and homelessness policy.
 fields_of_study:
-  - Environment & Climate
-  - Rural geography
-  - Social & Political Geography
+  - Environmental Governance
   - Climate Change & Biodiversity Loss
-areas_of_interest: Conservation · Climate change · Working landscapes · Social
-  networks · Place · Environmental communication · Collaborative governance ·
-  Rural geography · Canada
+  - Collaboration
+areas_of_interest: Environmental Communication · Collaborative Governance ·
+  Participatory Governance · Working Landscapes · Social Networks · Place ·
+  Rural Geography · Canada
 education:
   - degree: PhD, Human Geography
     school: University of Toronto
-    supervisor: Andrea Olive
-    cohort: 2023–2024
+    supervisor: ""
+    cohort: ""
     year: 2023–present
     current: true
   - degree: MA, Sustainability Studies

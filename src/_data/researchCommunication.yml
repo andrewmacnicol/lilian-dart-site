@@ -1,46 +1,44 @@
 hero_label: Research Communication
 hero_title: Research Communication
-intro_paragraph: Sharing research beyond academic journals — through conference
-  presentations, public writing, and media appearances.
+intro_paragraph: Sharing research through conference presentations, public
+  writing, and media appearances.
 items:
   - type: presentation
-    sort_date: "2026-05-05"
+    sort_date: 2026-05-05
     date: May 5-7, 2026
     title: "Working Together for Biodiversity: A Review of Collaborative
       Conservation in Canada"
     venue: Prairies Conservation and Endangered Species Conference (PCESC)
     location: Saskatoon, Canada
   - type: podcast
-    sort_date: "2025-08-05"
+    sort_date: 2025-08-05
     date: August 5, 2025
-    title: Lilian Dart on tick safety, education, and the prevention of Lyme
-      disease
+    title: Lilian Dart on tick safety, education, and the prevention of Lyme disease
     show: Looking for Lyme
     embed_url: https://share.transistor.fm/e/e8fff93c
     episode_url: https://www.lookingatlyme.ca/2025/08/lilian-dart-tick-safety-education-prevention/
   - type: presentation
-    sort_date: "2024-01-01"
+    sort_date: 2024-01-01
     date: "2024"
-    title: "The Power of Care in Youth-based Commoning for Climate Justice"
+    title: The Power of Care in Youth-based Commoning for Climate Justice
     venue: "Workshop on Ostrom Workshop 7 (WOW7) - Commons, Polycentricity, &
       Democracy: Building upon 50 years of Ostrom Governance Research"
     location: ""
   - type: presentation
-    sort_date: "2024-01-01"
+    sort_date: 2024-01-01
     date: "2024"
-    title: "Community-based Action Planning for Housing and Homelessness
-      Solutions"
+    title: Community-based Action Planning for Housing and Homelessness Solutions
     venue: Peterborough Community Symposium on Housing and Homelessness
     location: Peterborough, Canada
   - type: presentation
-    sort_date: "2018-04-28"
+    sort_date: 2018-04-28
     date: April 28, 2018
     title: "Citizen Science and Experiential Learning: Tick Education for New
       Brunswick Provincial Curriculum"
     venue: Maritime Tick and Tick-Vectored Disease Research Conference
     location: Sackville, Canada
   - type: presentation
-    sort_date: "2017-10-31"
+    sort_date: 2017-10-31
     date: October 31, 2017
     title: "Place-based Education for Sustainability: Theory into Practice in
       Sackville, N.B."
