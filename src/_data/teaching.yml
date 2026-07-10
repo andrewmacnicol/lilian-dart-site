@@ -13,11 +13,21 @@ philosophy_paragraph: As a course instructor at the University of Toronto, I am
   thinking in my students.
 courses:
   - role: Sessional Instructor · University of Toronto
-    title: Add your course name here
-    period_tag: Year / Semester
-    level_tag: Undergraduate / Graduate
-    description: Add a short course description here — one or two sentences about
-      what the course covers and who it's for.
+    title: "ENV435: Governing the Commons"
+    period_tag: Winter 2026
+    level_tag: Undergraduate
+    description: Common-pool resources (CPRs) include pastures, forests, watersheds,
+      ocean fisheries, traffic, the Internet, and the Earth’s climate. CPRs
+      present a variety of social dilemmas because it is difficult to exclude
+      and prevent resources users from accessing, using, and polluting a
+      resource. Individual self-interest may put CPRs at risk of overuse,
+      overconsumption, and exploitation to result in a “tragedy of the commons”
+      scenario. However resource users across the world, have devised rules and
+      strategies to avoid such tragedies to sustain CPRs over centuries. In this
+      course, through playing games in the classroom, we will learn whether and
+      how theories of collective action, cooperation, and institutions provide
+      insight into achieving conservation of CPRs that delivers on the twin
+      goals of social and environmental justice.
 expertise:
   - title: Human geography
     description: Place, space, environment, and society
