@@ -1,29 +1,32 @@
-meta_description: "Lilian Dart is a PhD candidate in Human Geography at the University of Toronto, researching human-environment relationships, rural stewardship, and collaborative governance in Canada."
-eyebrow: "PhD Candidate · University of Toronto"
-bio: "Geographer researching how human-environment relationships shape behaviour, participation, and environmental decision-making in Canada. Particularly interested in rural stewardship, collaborative governance, and the tensions between capital and place."
+meta_description: Lilian Dart is a PhD candidate in Human Geography at the
+  University of Toronto, researching human-environment relationships,
+  environmental communication, and collaboration.
+eyebrow: PhD Candidate · University of Toronto
+bio: Geographer researching how human-environment relationships shape behaviour,
+  participation, and environmental decision-making in Canada. Particularly
+  interested in agricultural stewardship, environmental communication,
+  collaboration, and the tensions between capital and place.
 interest_tags:
-  - label: "Conservation"
-    style: "blue"
-  - label: "Rural geography"
-    style: "blue"
-  - label: "Climate change"
-    style: "blue"
-  - label: "Governance"
-    style: "plain"
-  - label: "Place"
-    style: "plain"
-  - label: "Canada"
-    style: "plain"
+  - label: Conservation & Climate Change
+    style: blue
+  - label: Environmental Governance
+    style: plain
+  - label: Rural Geography
+    style: blue
+  - label: Place
+    style: plain
+  - label: Canada
+    style: plain
 quick_links:
-  - title: "Research & publications"
-    description: "Doctoral work, collaborative projects, and peer-reviewed publications"
-    href: "research.html"
-  - title: "Teaching"
-    description: "Courses taught and areas of instruction at the University of Toronto"
-    href: "teaching.html"
-  - title: "CV"
-    description: "Academic background, experience, and full curriculum vitae download"
-    href: "cv.html"
-  - title: "About"
-    description: "Background, academic journey, and ways to get in touch"
-    href: "about.html"
+  - title: Research & Publications
+    description: Doctoral work, collaborative projects, and peer-reviewed publications
+    href: research.html
+  - title: Teaching
+    description: Courses taught and areas of instruction at the University of Toronto
+    href: teaching.html
+  - title: CV
+    description: Academic background, experience, and full curriculum vitae download
+    href: cv.html
+  - title: About
+    description: Background, academic journey, and ways to get in touch
+    href: about.html
