@@ -721,6 +721,23 @@ footer {
   margin-top: 1rem;
 }
 
+.projects-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.projects-column .project-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 700px) {
+  .projects-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 .project-card {
   background: var(--sand);
   border-radius: 8px;
