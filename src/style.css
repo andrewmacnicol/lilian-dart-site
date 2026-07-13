@@ -235,6 +235,17 @@ p:last-child { margin-bottom: 0; }
   font-style: italic;
 }
 
+.pub-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--green-deep);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.pub-link:hover { text-decoration: underline; }
+
 /* TEACHING */
 .course-card {
   padding: 1.25rem 0;

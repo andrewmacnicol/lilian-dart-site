@@ -1,14 +1,14 @@
 /*
  * Custom Decap CMS widget for the Research page's "Publications" list.
  * Lets an editor paste an APA 7th-edition reference and auto-fills the
- * sibling Year / Title / Authors / Venue fields in the same list item.
+ * sibling Year / Title / Authors / Venue / Link fields in the same list item.
  *
  * This widget's own value is never persisted (we never call
  * this.props.onChange for it) — it only reaches into its sibling fields'
  * real <input> elements and dispatches native input events, so those
  * fields' own onChange handlers do the actual, officially-supported write.
  * This keeps each publication's saved YAML shape exactly
- * { year, title, authors, venue }, unchanged from before this widget existed.
+ * { year, title, authors, venue, link }, matching the config's fields.
  */
 (function () {
   function parseApaCitation(raw) {
@@ -21,6 +21,21 @@
     var authors = match[1].trim().replace(/,\s*$/, '');
     var year = match[2];
     var remainder = match[3].trim();
+
+    // APA references often end with a DOI or URL — peel it off before
+    // splitting the remainder into title/venue.
+    var link = '';
+    var urlMatch = remainder.match(/\b(https?:\/\/\S+?)\.?\s*$/i);
+    if (urlMatch) {
+      link = urlMatch[1];
+      remainder = remainder.slice(0, urlMatch.index).trim();
+    } else {
+      var doiMatch = remainder.match(/\bdoi:\s*(\S+?)\.?\s*$/i);
+      if (doiMatch) {
+        link = 'https://doi.org/' + doiMatch[1];
+        remainder = remainder.slice(0, doiMatch.index).trim();
+      }
+    }
 
     var title = remainder;
     var venue = '';
@@ -35,7 +50,7 @@
 
     if (!authors || !title) return null;
 
-    return { Year: year, Title: title, Authors: authors, Venue: venue };
+    return { Year: year, Title: title, Authors: authors, Venue: venue, 'Link / DOI': link };
   }
 
   function setNativeInputValue(input, value) {
@@ -99,7 +114,7 @@
       // sibling controls read a stale snapshot of the item and only the last
       // write sticks. Staggering across ticks lets each one commit first.
       var self = this;
-      var labels = ['Year', 'Title', 'Authors', 'Venue'];
+      var labels = ['Year', 'Title', 'Authors', 'Venue', 'Link / DOI'];
       var missing = [];
 
       function applyNext(i) {

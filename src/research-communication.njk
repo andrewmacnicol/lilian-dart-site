@@ -18,9 +18,25 @@ canonicalPath: /research-communication
   <p>{{ researchCommunication.intro_paragraph }}</p>
 </div>
 
-<!-- PRESENTATIONS & MEDIA -->
+<!-- CONFERENCE PRESENTATIONS -->
 <div class="content-section">
-  <p class="section-label">Presentations & media</p>
+  <p class="section-label">Conference presentations</p>
+  <div class="pub-list">
+    {% for item in researchCommunication.items | sort(true, false, "sort_date") %}
+      {% if item.type != "podcast" %}
+      <div class="pub-card">
+        <p class="pub-year">{{ item.date }}</p>
+        <p class="pub-title">{{ item.title }}</p>
+        <p class="pub-venue">{{ item.venue }}{% if item.location %}, {{ item.location }}{% endif %}</p>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- MEDIA -->
+<div class="content-section">
+  <p class="section-label">Media</p>
   <div class="pub-list">
     {% for item in researchCommunication.items | sort(true, false, "sort_date") %}
       {% if item.type == "podcast" %}
@@ -32,12 +48,6 @@ canonicalPath: /research-communication
         <a href="{{ item.episode_url }}" target="_blank" style="display: inline-block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--green-deep);">
           View episode page
         </a>
-      </div>
-      {% else %}
-      <div class="pub-card">
-        <p class="pub-year">{{ item.date }}</p>
-        <p class="pub-title">{{ item.title }}</p>
-        <p class="pub-venue">{{ item.venue }}{% if item.location %}, {{ item.location }}{% endif %}</p>
       </div>
       {% endif %}
     {% endfor %}

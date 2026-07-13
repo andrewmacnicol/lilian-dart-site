@@ -13,17 +13,6 @@ canonicalPath: /research
   </div>
 </div>
 
-<!-- DOCTORAL RESEARCH -->
-<div class="content-section">
-  <p class="section-label">Doctoral research</p>
-
-  <div class="research-focus">
-    <p>{{ research.focus_statement }}</p>
-  </div>
-
-  <p>{{ research.methods_paragraph }}</p>
-</div>
-
 <!-- CURRENT & PAST PROJECTS -->
 <div class="content-section">
   <div class="projects-columns">
@@ -69,11 +58,14 @@ canonicalPath: /research
       <p class="pub-title">{{ pub.title }}</p>
       <p class="pub-authors">{{ pub.authors }}</p>
       <p class="pub-venue">{{ pub.venue }}</p>
+      {% if pub.link %}
+      <a class="pub-link" href="{{ pub.link }}" target="_blank" rel="noopener">{{ pub.link }}</a>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
 
   <div style="margin-top: 2rem;">
-    <p style="font-size:0.85rem; color:var(--ink-muted);">For the most current list of publications and working papers, please <a href="mailto:{{ site.email }}" style="color:var(--green-deep);">get in touch</a> or visit my <a href="{{ site.linkedin }}" target="_blank" style="color:var(--green-deep);">LinkedIn profile</a>.</p>
+    <p style="font-size:0.85rem; color:var(--ink-muted);">If you would like to read any of my publications, <a href="mailto:{{ site.email }}" style="color:var(--green-deep);">get in touch</a> and I will send you a copy.</p>
   </div>
 </div>

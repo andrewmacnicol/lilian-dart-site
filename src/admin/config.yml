@@ -92,8 +92,6 @@ collections:
         fields:
           - { label: "Page label", name: "hero_label", widget: "string" }
           - { label: "Heading", name: "hero_title", widget: "string" }
-          - { label: "Doctoral focus statement", name: "focus_statement", widget: "text" }
-          - { label: "Methods paragraph", name: "methods_paragraph", widget: "text" }
           - label: "Projects"
             name: "projects"
             widget: "list"
@@ -115,6 +113,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Authors", name: "authors", widget: "string" }
               - { label: "Venue", name: "venue", widget: "string" }
+              - { label: "Link / DOI", name: "link", widget: "string", required: false, hint: "Optional — full URL, e.g. https://doi.org/10.1234/abcd" }
 
   - name: "research_communication"
     label: "Research Communication Page"
