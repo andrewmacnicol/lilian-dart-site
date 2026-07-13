@@ -14,16 +14,15 @@ canonicalPath: /teaching
 </div>
 
 <!-- PHILOSOPHY -->
-<div class="content-section">
+<div class="content-section content-section--tight">
   <p class="section-label">Approach</p>
   <div class="teaching-philosophy">
-    <p>{{ teaching.philosophy_quote }}</p>
+    <p>{{ teaching.philosophy_paragraph }}</p>
   </div>
-  <p>{{ teaching.philosophy_paragraph }}</p>
 </div>
 
 <!-- COURSES -->
-<div class="content-section">
+<div class="content-section content-section--tight-top">
   <p class="section-label">Courses</p>
 
   {% for course in teaching.courses %}

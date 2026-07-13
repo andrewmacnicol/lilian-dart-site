@@ -159,7 +159,6 @@ collections:
         fields:
           - { label: "Page label", name: "hero_label", widget: "string" }
           - { label: "Heading", name: "hero_title", widget: "string" }
-          - { label: "Philosophy quote", name: "philosophy_quote", widget: "text" }
           - { label: "Philosophy paragraph", name: "philosophy_paragraph", widget: "text" }
           - label: "Courses"
             name: "courses"
